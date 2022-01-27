@@ -11,6 +11,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/billw.vim'
+Plug 'andweeb/presence.nvim'
 
 call plug#end()
 
