@@ -14,8 +14,6 @@ if ! command -v nvim >/dev/null; then
 	chmod +x ./nvim.appimage && sudo mv ./nvim.appimage /bin/neovim
 	sudo ln -s /bin/neovim /bin/nvim
 	sudo ln -s /bin/neovim /bin/vim
-	sudo mv /usr/bin/vi /usr/bin/vi.old
-	sudo ln -s /bin/nvim /bin/vi
 fi
 
 
