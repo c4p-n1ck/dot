@@ -12,6 +12,11 @@ sudo pacman -Sy --needed lsd zsh neovim xclip neofetch
 
 
 echo "[+] Installing Plug-ins for nvim"
+if ! command -v neovim >/dev/null; then
+	echo "[+] Installing neovim (appimage)"
+	wget $(curl -s https://api.github.com/repos/neovim/neovim/releases | grep appimage | head -n 2 | tail -n 1 | cut -d '"' -f 4)
+	chmod +x ./nvim.appimage && sudo mv ./nvim.appimage /bin/neovim
+fi
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 mkdir -p $HOME/.config/nvim >/dev/null
 cp ./config/nvim/init.vim "$HOME/.config/nvim"
