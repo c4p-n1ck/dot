@@ -1,0 +1,21 @@
+export confdir="$HOME/.config/zsh"
+neofetch --ascii $confdir/neo
+
+
+# Load Antibody
+source <(antibody init)
+export ANTIBODY_HOME="$(antibody home)"
+
+
+# Useful plugins, out of Oh-My-ZSH
+antibody bundle < $confdir/plugins.zsh
+
+
+# Load Oh My Zsh, theme
+source $confdir/oh-my.zsh
+antibody bundle robbyrussell/oh-my-zsh
+antibody bundle romkatv/powerlevel10k
+
+
+# Misc. configs
+source $confdir/misc.zsh
